@@ -1,4 +1,5 @@
 import { daftarProduk } from "./data.js";
+
 // FUNCTION 1: Cari produk berdasarkan nama (keyword)
 function cariBerdasarkanNama(data, keyword) {
   return data.filter((produk) =>
@@ -17,7 +18,8 @@ function cariDanFilterHarga(data, keyword, maksimal) {
     )
     .filter((produk) => produk.harga <= maksimal);
 }
-//TESTING
+
+//OUTPUT
 console.log("--- Cari 'Laptop'---");
 console.log(cariBerdasarkanNama(daftarProduk, "laptop"));
 

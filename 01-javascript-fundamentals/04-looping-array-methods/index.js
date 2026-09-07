@@ -68,8 +68,9 @@ daftarProduk.forEach((p) => {
 });
 
 // reduce() - gabungin semua jadi 1 nilai
-const hargaTotal = daftarProduk((p) => total + p.harga, 0);
+const hargaTotal = daftarProduk.reduce((total, p) => total + p.harga, 0);
 console.log("Total harga:", hargaTotal);
+
 
 // MINI EXERCISE : PENGOLAHAN DATA SISWA
 
@@ -80,29 +81,26 @@ const siswa = [
   { nama: "Donal", nilai: 45 },
   { nama: "Erlyta", nilai: 78 },
 ];
-//1. Cari siswa yang lulus (nilai >=75)
-function siswaLulus(data) {
-  return data.filter((s) => s.nilai >= 75);
-}
 
-// 2. Hitung rata rata nilai
-function nilaiRataRata(data) {
-  const total = data.reduce((total, s) => total + s.nilai, 0);
-  return total / data.length;
-}
+//1. Filter
+const siswaLulus = siswa.filter((s)=> s.nilai >=75);
+console.log("Siswa lulus :", siswaLulus);
 
-// 3. Buat daftar info string "nama: nilai"
-function infoSiswa(data) {
-  return data.map((s) => `${s.nama} : ${s.nilai}`);
-}
+// 2. Reduce
+const totalNilai = siswa.reduce((total,s) => total + s.nilai ,0);
+const rataRata = totalNilai / siswa.length;
+console.log("Rata rata :", rataRata);
 
-// 4. Cari nilai tertinggi
-function nilaiTertinggi(data) {
-  return data.reduce((tertinggi, s) =>
-    s.nilai > tertinggi.nilai ? s : tertinggi,
-  );
-}
+// 3.Map
+const infoSiswa = siswa.map((s) => `${s.nama} : ${s.nilai}`)
+console.log("Info siswa:", infoSiswa);
 
-console.log("Siswa lulus:", siswaLulus(siswa));
-console.log("Rata-rata nilai:", nilaiRataRata(siswa));
-console.log("Info siswa:", nilaiTertinggi(siswa));
+// 4. Find
+const cariSiswa = siswa.find((s) => s.nama === "Cici");
+console.log("Cari Siswa:", cariSiswa);
+
+// 5. ForEach
+console.log("Semua siswa:")
+siswa.forEach((s) => {
+  console.log("nama:",s.nama, "nilai:", s.nilai);
+});
