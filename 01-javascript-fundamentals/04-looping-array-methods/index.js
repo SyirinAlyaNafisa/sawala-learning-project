@@ -1,6 +1,6 @@
 // MATERI : LOOPING & ARRAY METHODS
 
-// LOOPING
+// LOOPING (perulangan data)
 // ----- 1. for loop dasar (sudah tahu jumlah perulangan nya) -----
 for (let i = 1; i <= 5; i++) {
   console.log(i);
@@ -15,10 +15,11 @@ while (angka <= 5) {
 
 // ----- 3. do while (kode di jalankan lebih dahulu, baru kondisi di periksa) -----
 let number = 1;
+
 do {
   console.log(number);
-  angka++;
-} while (angka <= 3);
+  number++;
+} while (number <= 3);
 //note :
 // do : tampilkan dulu
 //while : baru di cek
@@ -35,12 +36,6 @@ for (let i = 1; i <= 5; i++) {
   console.log("continue demo :", i);
 }
 
-// ----- 6. Latihan: print angka genap 1-10 -----
-for (let i = 1; i <= 10; i++) {
-  if (i % 2 === 0) {
-    console.log("genap:", i);
-  }
-}
 
 // ARRAY METHODS
 

@@ -1,6 +1,6 @@
 // MATERI: DESTRUCTURING & SPREAD OPERATOR
 
-// ----- 1. Destructuring Object -----
+// ----- 1. Destructuring Object (cara mengambil nilai dari array atau object lalu menyimpannya ke dalam variabel.)-----
 const produk = {
   nama: "Laptop",
   harga: 8000000,
@@ -9,6 +9,7 @@ const produk = {
 // cara lama (tanpa destructuring)
 const namaLama = produk.nama;
 const hargaLama = produk.harga;
+
 //cara baru (dengan destructuring) - ambil beberapa properti sekaligus
 const { nama, harga } = produk;
 console.log(nama, harga);
@@ -26,18 +27,13 @@ const buahKeduaLama = buah[1];
 const [pertama, kedua, ketiga] = buah;
 console.log(pertama, kedua, ketiga);
 
-// ----- 4. Destructuring di parameter function (sering dipakai!) -----
-function infoProduk({ nama, harga }) {
-  return `${nama} seharga Rp${harga}`;
-}
-console.log(infoProduk(produk));
 
-// ----- 5. Spread Operator pada Object -----
+// ----- 1. Spread Operator pada Object -----
 // spread = "membuka" isi object/array, lalu bisa dipakai buat gabung/copy
 const produkBaru = { ...produk, diskon: true };
 console.log(produkBaru);
 
-// ----- 6. Spread Operator pada Array -----
+// ----- 2. Spread Operator pada Array -----
 const buahBaru = [...buah, "melon"];
 console.log(buahBaru);
 
@@ -46,6 +42,6 @@ const sayur = ["wortel", "bayam"];
 const semuaMakananan = [...buah, ...sayur];
 console.log(semuaMakananan);
 
-// ----- 7. Update 1 properti object tanpa mengubah yang lain -----
+// ----- 3. Update 1 properti object tanpa mengubah yang lain -----
 const produkUpdate = { ...produk, harga: 7500000 };
 console.log(produkUpdate);

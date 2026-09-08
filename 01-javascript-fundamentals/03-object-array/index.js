@@ -1,23 +1,23 @@
 // MATERI : OBJECT & ARRAY
 
-// ---- 1. Array  dasar -----
+// ---- 1. Array (sekumpulan data yang memiliki urutan)  dasar -----
 const buah = ["apel", "jeruk", "mangga"];
 
-console.log(buah[0]);
-console.log(buah.length);
+console.log(buah[0]); // index pertama
+console.log(buah.length); // jumlah item
 buah.push("pisang"); // nambah item di akhir
 console.log(buah);
 buah.pop(); // hapus item terakhir
 console.log(buah);
 
-// ----- 2. Object  dasar -----
+// ----- 2. Object (key:value) -----
 const produk = {
   nama: "Komputer",
   harga: 12000000,
   stok: 10,
 };
 console.log(produk.nama);
-console.log(produk["harga"]);
+console.log(produk.harga);
 
 // ----- 3. Array berisi object -----
 const daftarProduk = [

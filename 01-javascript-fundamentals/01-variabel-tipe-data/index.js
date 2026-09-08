@@ -1,5 +1,6 @@
-// variabel
+// materi variabel & tipe data
 
+//1. variabel tempat menyimpan data
 // const : tidak bisa berubah
 const nama = "syirin  alya nafisa";
 
@@ -10,7 +11,7 @@ umur = 21; // bisa berubah karena pakai let
 console.log("Nama:", nama);
 console.log("Umur:", umur);
 
-// Tipe data dasar
+// 2. Tipe data dasar (jenis data yag di simpan di variabel)
 
 const string = "Hello friend!"; //teks
 const number = 28; //angka
