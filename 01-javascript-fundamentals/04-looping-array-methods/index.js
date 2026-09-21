@@ -36,7 +36,6 @@ for (let i = 1; i <= 5; i++) {
   console.log("continue demo :", i);
 }
 
-
 // ARRAY METHODS
 
 const daftarProduk = [
@@ -55,17 +54,16 @@ console.log("Produk mahal: ", produkMahal);
 
 // find() - cari 1 item pertama yang cocok
 const cariKeyboard = daftarProduk.find((p) => p.nama === "Keyboard");
-console.log("Cari Keyboard: ", cariKeyboard);
+console.log("C   ari Keyboard: ", cariKeyboard);
 
 // forEach() - loop biasa, gak return apa apa
 daftarProduk.forEach((p) => {
-  console.log(`${p.nama} : ${p.harga}`);
+  console.log(`${p.nama} : ${p.harga}`); //$ tempelate literal , masukan nilai variabel ke string
 });
 
 // reduce() - gabungin semua jadi 1 nilai
 const hargaTotal = daftarProduk.reduce((total, p) => total + p.harga, 0);
 console.log("Total harga:", hargaTotal);
-
 
 // MINI EXERCISE : PENGOLAHAN DATA SISWA
 
@@ -78,16 +76,16 @@ const siswa = [
 ];
 
 //1. Filter
-const siswaLulus = siswa.filter((s)=> s.nilai >=75);
+const siswaLulus = siswa.filter((s) => s.nilai >= 75);
 console.log("Siswa lulus :", siswaLulus);
 
 // 2. Reduce
-const totalNilai = siswa.reduce((total,s) => total + s.nilai ,0);
+const totalNilai = siswa.reduce((total, s) => total + s.nilai, 0);
 const rataRata = totalNilai / siswa.length;
 console.log("Rata rata :", rataRata);
 
 // 3.Map
-const infoSiswa = siswa.map((s) => `${s.nama} : ${s.nilai}`)
+const infoSiswa = siswa.map((s) => `${s.nama} : ${s.nilai}`);
 console.log("Info siswa:", infoSiswa);
 
 // 4. Find
@@ -95,7 +93,20 @@ const cariSiswa = siswa.find((s) => s.nama === "Cici");
 console.log("Cari Siswa:", cariSiswa);
 
 // 5. ForEach
-console.log("Semua siswa:")
+console.log("Semua siswa:");
 siswa.forEach((s) => {
-  console.log("nama:",s.nama, "nilai:", s.nilai);
+  console.log("nama:", s.nama, "nilai:", s.nilai);
 });
+
+const dataSiswa = [
+  { nama: "yaya", age: 23 },
+  { nama: "budi", age: 24 },
+  { nama: "gita", age: 25 },
+];
+const baru = dataSiswa.filter((age) => {
+  if (age.age > 23) {
+    return age;
+  }
+});
+
+console.log(baru);
