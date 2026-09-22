@@ -10,6 +10,7 @@ async function main() {
     console.log("ID:", user.id);
     console.log("Nama:", user.name);
     console.log("Email:", user.email);
+    
   } catch (error) {
     console.log("Error: Gagal mengambil data");
   } finally {

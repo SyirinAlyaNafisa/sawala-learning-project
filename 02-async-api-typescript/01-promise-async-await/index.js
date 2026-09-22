@@ -18,14 +18,14 @@ ambilData
   });
 
 // 2. PROMISE DENGAN setTimeout (simulasi proses butuh waktu)
-function tokoRoti(pesanan) {
-  return new Promise((resolve, reject) => {
+function jualMartabak(pesanan) {
+  return new Promise((berhasil, gagal) => {
     console.log("Pesanan sedang diproses....");
     setTimeout(() => {
-      if (pesanan === "Roti Coklat") {
-        resolve("Roti Coklat berhasil dibuat!");
+      if (pesanan === "Coklat") {
+        berhasil("Martabak Coklat berhasil dibuat!");
       } else {
-        reject("Maaf, stok Roti Coklat habis.");
+        gagal("Maaf, stok Martabak Coklat habis.");
       }
     }, 1500);
   });
@@ -34,7 +34,7 @@ function tokoRoti(pesanan) {
 // 3. ASYNC/AWAIT — cara "buka" Promise yang lebih rapi
 async function prosesPemesanan(pesanan) {
   try {
-    const hasil = await tokoRoti(pesanan);
+    const hasil = await jualMartabak(pesanan);
     console.log(hasil);
   } catch (error) {
     console.log(error);
@@ -43,8 +43,6 @@ async function prosesPemesanan(pesanan) {
   }
 }
 
-// =====================================================
-// TESTING
-// =====================================================
-prosesPemesanan("Roti Coklat"); // ini bakal berhasil (resolve)
-prosesPemesanan("Roti Keju"); // ini bakal gagal (reject)
+//test
+prosesPemesanan("Coklat"); // ini bakal berhasil (resolve)
+prosesPemesanan("Keju"); // ini bakal gagal (reject)
