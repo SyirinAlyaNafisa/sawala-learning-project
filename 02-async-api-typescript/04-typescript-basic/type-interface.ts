@@ -7,5 +7,6 @@ export type Siswa = {
 export interface Produk {
   nama: string;
   harga: number;
-  Gender: "Cowok" | "Cewek";
+  stok: number;
+  tersedia: boolean;
 }

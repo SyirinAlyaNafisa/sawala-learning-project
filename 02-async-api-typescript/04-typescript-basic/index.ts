@@ -9,7 +9,8 @@ const siswa: Siswa = {
 const produk: Produk = {
   nama: "Laptop",
   harga: 10000000,
-  Gender : "Cowok",
+  stok: 5,
+  tersedia: true,
 };
 
 console.log(siswa);
