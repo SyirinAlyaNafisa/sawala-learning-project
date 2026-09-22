@@ -14,7 +14,7 @@ async function getData() {
       "https://jsonplaceholder.typicode.com/users/2",
     );
     if (!response.ok) {
-      throw new Error("Gagal mengambil data");
+      throw new Error("Gagal mengambil data nya");
     }
     const data = await response.json();
     console.log(data);
