@@ -1,3 +1,5 @@
+// fetch API
+
 // Dengan try catch
 async function getData() {
   try {
@@ -12,7 +14,7 @@ async function getData() {
       "https://jsonplaceholder.typicode.com/users/2",
     );
     if (!response.ok) {
-      throw new Error("Gagal mengambil data");
+      throw new Error("Gagal mengambil data user");
     }
     const data = await response.json();
     console.log(data);
