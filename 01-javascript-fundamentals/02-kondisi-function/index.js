@@ -1,4 +1,6 @@
-// 1. Kondisi (IF-ELSE)
+//Materi : kondisi & function
+
+// 1. Kondisi (IF-ELSE) / membuat percabangan atau mengambil keputusan berdasarkan kondisi.
 
 // Contoh sederhana : cek umur
 const umur = 17;
@@ -20,7 +22,7 @@ function cekLulus(nilai) {
 console.log(cekLulus(80));
 console.log(cekLulus(65));
 
-//contoh dengan else if : bsnysk kondisi
+//contoh dengan else if : banyak kondisi
 const nilai = 85;
 if (nilai >= 90) {
   console.log("Grade :A (Sangat Baik)");
@@ -32,7 +34,8 @@ if (nilai >= 90) {
   console.log("Grade: D (Perlu Belajar lagi)");
 }
 
-// 2. Function
+// 2. Function (sekumpulan kode yang bisa dipanggil/digunakan berkali-kali.)
+
 // Cara Biasa
 function tambah(a, b) {
   return a + b;
@@ -48,10 +51,10 @@ const kurang2 = (a, b) => a - b;
 console.log(kurang2(10, 4));
 
 // 3. Mini Exercise : kalkulator sederhana
-const prompt = require("prompt-sync")();
-const a = Number(prompt("Masukkan angka pertama: "));
-const operator = prompt("Mausukkan operator (+,-,*,/): ");
-const b = Number(prompt("Masukkan angka kedua: "));
+
+const a = 10;
+const operator = "+";
+const b = 5;
 
 function kalkulatorMini(a, b, operator) {
   if (operator === "+") {
@@ -68,6 +71,3 @@ function kalkulatorMini(a, b, operator) {
 }
 
 console.log("hasil:", kalkulatorMini(a, b, operator));
-console.log(kalkulatorMini(2, 5, "+"));
-
-//

@@ -1,6 +1,6 @@
 // MATERI : LOOPING & ARRAY METHODS
 
-// LOOPING
+// LOOPING (perulangan data)
 // ----- 1. for loop dasar (sudah tahu jumlah perulangan nya) -----
 for (let i = 1; i <= 5; i++) {
   console.log(i);
@@ -15,10 +15,11 @@ while (angka <= 5) {
 
 // ----- 3. do while (kode di jalankan lebih dahulu, baru kondisi di periksa) -----
 let number = 1;
+
 do {
   console.log(number);
-  angka++;
-} while (angka <= 3);
+  number++;
+} while (number <= 3);
 //note :
 // do : tampilkan dulu
 //while : baru di cek
@@ -33,13 +34,6 @@ for (let i = 1; i <= 10; i++) {
 for (let i = 1; i <= 5; i++) {
   if (i === 3) continue; //skip angka 3 aja
   console.log("continue demo :", i);
-}
-
-// ----- 6. Latihan: print angka genap 1-10 -----
-for (let i = 1; i <= 10; i++) {
-  if (i % 2 === 0) {
-    console.log("genap:", i);
-  }
 }
 
 // ARRAY METHODS
@@ -60,17 +54,16 @@ console.log("Produk mahal: ", produkMahal);
 
 // find() - cari 1 item pertama yang cocok
 const cariKeyboard = daftarProduk.find((p) => p.nama === "Keyboard");
-console.log("Cari Keyboard: ", cariKeyboard);
+console.log("C   ari Keyboard: ", cariKeyboard);
 
 // forEach() - loop biasa, gak return apa apa
 daftarProduk.forEach((p) => {
-  console.log(`${p.nama} : ${p.harga}`);
+  console.log(`${p.nama} : ${p.harga}`); //$ tempelate literal , masukan nilai variabel ke string
 });
 
 // reduce() - gabungin semua jadi 1 nilai
 const hargaTotal = daftarProduk.reduce((total, p) => total + p.harga, 0);
 console.log("Total harga:", hargaTotal);
-
 
 // MINI EXERCISE : PENGOLAHAN DATA SISWA
 
@@ -83,16 +76,16 @@ const siswa = [
 ];
 
 //1. Filter
-const siswaLulus = siswa.filter((s)=> s.nilai >=75);
+const siswaLulus = siswa.filter((s) => s.nilai >= 75);
 console.log("Siswa lulus :", siswaLulus);
 
 // 2. Reduce
-const totalNilai = siswa.reduce((total,s) => total + s.nilai ,0);
+const totalNilai = siswa.reduce((total, s) => total + s.nilai, 0);
 const rataRata = totalNilai / siswa.length;
 console.log("Rata rata :", rataRata);
 
 // 3.Map
-const infoSiswa = siswa.map((s) => `${s.nama} : ${s.nilai}`)
+const infoSiswa = siswa.map((s) => `${s.nama} : ${s.nilai}`);
 console.log("Info siswa:", infoSiswa);
 
 // 4. Find
@@ -100,7 +93,20 @@ const cariSiswa = siswa.find((s) => s.nama === "Cici");
 console.log("Cari Siswa:", cariSiswa);
 
 // 5. ForEach
-console.log("Semua siswa:")
+console.log("Semua siswa:");
 siswa.forEach((s) => {
-  console.log("nama:",s.nama, "nilai:", s.nilai);
+  console.log("nama:", s.nama, "nilai:", s.nilai);
 });
+
+const dataSiswa = [
+  { nama: "yaya", age: 23 },
+  { nama: "budi", age: 24 },
+  { nama: "gita", age: 25 },
+];
+const baru = dataSiswa.filter((age) => {
+  if (age.age > 23) {
+    return age;
+  }
+});
+
+console.log(baru);

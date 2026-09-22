@@ -1,30 +1,37 @@
 import { daftarProduk } from "./data.js";
 
-// FUNCTION 1: Cari produk berdasarkan nama (keyword)
-function cariBerdasarkanNama(data, keyword) {
-  return data.filter((produk) =>
-    produk.nama.toLowerCase().includes(keyword.toLowerCase()),
+// Tampilkan semua nama produk
+daftarProduk.forEach((item) => {
+  console.log(item.nama);
+});
+
+// Cari produk berdasarkan nama
+const cariProduk = (keyword) => {
+  return daftarProduk.filter((item) =>
+    item.nama.toLowerCase().includes(keyword.toLowerCase())
   );
-}
-// FUNCTION 2: Filter produk berdasarkan harga maksimal
-function filterBerdasarkanHarga(data, maksimal) {
-  return data.filter((produk) => produk.harga <= maksimal);
-}
-// FUNCTION 3 (bonus): Gabungin cari + filter harga sekaligus
-function cariDanFilterHarga(data, keyword, maksimal) {
-  return data
-    .filter((produk) =>
-      produk.nama.toLowerCase().includes(keyword.toLowerCase()),
+};
+
+// Filter produk berdasarkan harga maksimal
+const filterByHarga = (maksimal) => {
+  return daftarProduk.filter((item) => item.harga <= maksimal);
+};
+
+// Cari produk + filter harga
+const cariDanFilterHarga = (keyword, maksimal) => {
+  return daftarProduk
+    .filter((item) =>
+      item.nama.toLowerCase().includes(keyword.toLowerCase())
     )
-    .filter((produk) => produk.harga <= maksimal);
-}
+    .filter((item) => item.harga <= maksimal);
+};
 
-//OUTPUT
-console.log("--- Cari 'Laptop'---");
-console.log(cariBerdasarkanNama(daftarProduk, "laptop"));
+// OUTPUT
+console.log(cariProduk("laptop"));
+console.log(filterByHarga(500000));
+console.log(cariDanFilterHarga("kursi", 3000000));
 
-console.log("--- Filter harga di bawah 500000 ---");
-console.log(filterBerdasarkanHarga(daftarProduk, 500000));
-
-console.log("--- Cari 'kursi' + harga di bawah 3000000 ---");
-console.log(cariDanFilterHarga(daftarProduk, "kursi", 3000000));
+//keyword = parameter yang nantinya di isi
+// tolowecase mengubah teks menjadi huruf kecil 
+// toUpperCase mengubah teks menjadi huruf besar 
+// includes untuk mengecek apakah string mengandung teks tertentu
