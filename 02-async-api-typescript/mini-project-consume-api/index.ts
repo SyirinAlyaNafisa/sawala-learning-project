@@ -1,7 +1,20 @@
 import { getUser } from "./api.ts";
 
-const user = await getUser();
+async function main() {
+  console.log("Loading...");
 
-console.log("Nama:", user.name);
-console.log("Username:", user.username);
-console.log("Email:", user.email);
+  try {
+    const user = await getUser();
+
+    console.log("Data:");
+    console.log("ID:", user.id);
+    console.log("Nama:", user.name);
+    console.log("Email:", user.email);
+  } catch (error) {
+    console.log("Error: Gagal mengambil data");
+  } finally {
+    console.log("Selesai");
+  }
+}
+
+main();

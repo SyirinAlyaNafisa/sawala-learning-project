@@ -1,16 +1,17 @@
 export interface User {
   id: number;
   name: string;
-  username: string;
   email: string;
 }
 
-export async function getUser() {
+export async function getUser(): Promise<User> {
   const response = await fetch(
     "https://jsonplaceholder.typicode.com/users/1"
   );
 
-  const data = await response.json();
+  if (!response.ok) {
+    throw new Error("Gagal mengambil data");
+  }
 
-  return data;
+  return await response.json();
 }
