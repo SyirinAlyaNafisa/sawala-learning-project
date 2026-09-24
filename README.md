@@ -24,7 +24,7 @@ npm install
 
 ## Progress
 - [x] Milestone 1: JavaScript Fundamentals
-- [ ] Milestone 2: Async JavaScript, API & TypeScript
+- [x] Milestone 2: Async JavaScript, API & TypeScript
 - [ ] Milestone 3: Node.js Fundamentals
 - [ ] Milestone 4: React Fundamentals
 - [ ] Milestone 5: Next.js, Atomic Component & Integrasi Fullstack
