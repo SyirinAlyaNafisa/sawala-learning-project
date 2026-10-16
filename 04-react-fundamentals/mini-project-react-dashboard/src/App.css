@@ -1,0 +1,112 @@
+
+#root {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f3ff;
+  color: #292344;
+}
+
+h1 {
+  color: #6d4aff;
+}
+
+.card {
+  margin: 24px 0;
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #6d4aff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5435d6;
+}
+
+
+.completed {
+  color: green;
+  font-weight: bold;
+}
+
+.pending {
+  color: #b45309;
+  font-weight: bold;
+}
+
+
+/* Kotak pencarian materi */
+input {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border: 1px solid #d8d0ff;
+  border-radius: 10px;
+  background-color: white;
+  color: #292344;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #6d4aff;
+  box-shadow: 0 0 0 3px #6d4aff20;
+}
+
+/* Susunan kartu materi */
+#root > div {
+  width: 100%;
+}
+
+/* Efek saat kartu disentuh mouse */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(64, 45, 120, 0.12);
+}
+
+
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dashboard section {
+  margin-top: 32px;
+}
+
+.dashboard input {
+  display: block;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  .summary {
+    grid-template-columns: 1fr;
+  }
+}
