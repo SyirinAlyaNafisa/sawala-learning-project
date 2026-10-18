@@ -1,82 +1,85 @@
 
+import { Suspense } from "react";
 import ArticleList, {
   type Article,
 } from "@/components/organisms/ArticleList";
 import Button from "@/components/atoms/Button";
+import { getMateri } from "@/lib/strapi";
 
-const articles: Article[] = [
-  {
-    category: "Teknologi",
-    title: "Mengenal Next.js App Router",
-    description:
-      "Memahami routing, page, dan layout untuk membangun aplikasi web yang terstruktur.",
-    date: "Materi 01",
-  },
-  {
-    category: "Web Development",
-    title: "Memahami Atomic Design",
-    description:
-      "Menyusun komponen UI menjadi atoms, molecules, dan organisms.",
-    date: "Materi 02",
-  },
-  {
-    category: "Fullstack",
-    title: "Integrasi Next.js dan Strapi",
-    description:
-      "Mengenal REST API untuk mengambil data artikel dari CMS.",
-    date: "Materi 03",
-  },
-];
+function LoadingMateri() {
+  return (
+    <section id="articles" className="articles-section">
+      <p>Memuat materi pembelajaran...</p>
+    </section>
+  );
+}
+
+async function MateriSection() {
+  const materi = await getMateri();
+
+  const articles: Article[] = materi.map((item) => ({
+    slug: item.slug,
+    category: item.category,
+    title: item.title,
+    description: item.description,
+    date: `Minggu ${item.week}–${item.week + 1}`,
+  }));
+
+  return (
+    <section id="articles" className="articles-section">
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">EXPLORE & LEARN</p>
+          <h2>Materi Pembelajaran</h2>
+        </div>
+
+        <span className="article-count">
+          {articles.length} Materi
+        </span>
+      </div>
+
+      <ArticleList articles={articles} />
+    </section>
+  );
+}
 
 export default function Home() {
   return (
     <main className="page">
       <header className="header">
         <a href="/" className="logo">
-          article<span>space.</span>
+          Sawala <span>Learning Hub.</span>
         </a>
 
         <nav>
           <a href="/">Beranda</a>
-          <a href="#articles">Artikel</a>
+          <a href="#articles">Materi</a>
         </nav>
       </header>
 
       <section className="hero">
-        <p className="eyebrow">YOUR DAILY KNOWLEDGE</p>
+        <p className="eyebrow">YOUR LEARNING JOURNEY</p>
 
         <h1>
-          Cerita, ide, dan wawasan
+          Belajar, berkembang,
           <br />
-          <span>dalam satu ruang.</span>
+          <span>dan membangun masa depan.</span>
         </h1>
 
         <p className="hero-description">
-          Temukan artikel menarik seputar teknologi,
-          pengembangan web, dan perjalanan belajar.
+          Pelajari materi pengembangan web secara bertahap
+          melalui perjalanan belajar bersama Sawala.
         </p>
 
-        <Button>Jelajahi Artikel →</Button>
-        
+        <Button>Jelajahi Materi →</Button>
       </section>
 
-      <section id="articles" className="articles-section">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">EXPLORE & LEARN</p>
-            <h2>Artikel Terbaru</h2>
-          </div>
-
-          <span className="article-count">
-            {articles.length} Artikel
-          </span>
-        </div>
-
-        <ArticleList articles={articles} />
-      </section>
+      <Suspense fallback={<LoadingMateri />}>
+        <MateriSection />
+      </Suspense>
 
       <footer className="footer">
-        <p>article space.</p>
+        <p>Sawala Learning Hub.</p>
         <span>Belajar dan berkembang bersama.</span>
       </footer>
     </main>

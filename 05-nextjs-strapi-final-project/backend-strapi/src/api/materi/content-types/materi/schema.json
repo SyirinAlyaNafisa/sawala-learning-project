@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "materis",
+  "info": {
+    "singularName": "materi",
+    "pluralName": "materis",
+    "displayName": "Materi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "text"
+    },
+    "week": {
+      "type": "integer"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "React",
+        "Next.js",
+        "Strapi",
+        "API & Integration",
+        "Git & GitHub"
+      ]
+    },
+    "learningObjectives": {
+      "type": "text"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "codeExample": {
+      "type": "text"
+    },
+    "references": {
+      "type": "text"
+    }
+  }
+}
