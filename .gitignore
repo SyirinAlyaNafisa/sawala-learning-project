@@ -1,1 +1,35 @@
+
+# Dependencies
 node_modules/
+**/node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build outputs
+.next/
+**/.next/
+dist/
+**/dist/
+build/
+**/build/
+
+# Strapi generated files
+**/.strapi/
+**/.strapi-updater.json
+**/.strapi-cloud.json
+
+# Logs and local databases
+npm-debug.log*
+*.sqlite
+*.sqlite3
+*.db
+
+# TypeScript
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db

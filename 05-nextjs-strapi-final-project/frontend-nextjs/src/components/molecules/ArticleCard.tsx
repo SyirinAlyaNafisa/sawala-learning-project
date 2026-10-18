@@ -1,5 +1,8 @@
 
+import Link from "next/link";
+
 type ArticleCardProps = {
+  slug: string;
   category: string;
   title: string;
   description: string;
@@ -8,6 +11,7 @@ type ArticleCardProps = {
 };
 
 export default function ArticleCard({
+  slug,
   category,
   title,
   description,
@@ -18,6 +22,7 @@ export default function ArticleCard({
     <article className="article-card">
       <div className={`article-cover cover-${(index % 3) + 1}`}>
         <span>{category}</span>
+
         <div className="cover-decoration">
           {String(index + 1).padStart(2, "0")}
         </div>
@@ -27,7 +32,13 @@ export default function ArticleCard({
         <p className="article-date">{date}</p>
         <h3>{title}</h3>
         <p className="article-description">{description}</p>
-        <span className="read-more">Baca selengkapnya ↗</span>
+
+        <Link
+          href={`/articles/${slug}`}
+          className="read-more"
+        >
+          Baca selengkapnya ↗
+        </Link>
       </div>
     </article>
   );
