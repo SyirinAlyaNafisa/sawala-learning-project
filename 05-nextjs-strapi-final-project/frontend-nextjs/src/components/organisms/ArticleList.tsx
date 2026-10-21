@@ -30,10 +30,10 @@ export default function ArticleList({ articles }: ArticleListProps) {
       <div className="article-search">
         <input
           type="text"
-          placeholder="Cari artikel berdasarkan judul..."
+          placeholder="Cari materi berdasarkan judul..."
           value={search}
           onChange={(event) => setSearch(event.target.value)}
-          aria-label="Cari artikel berdasarkan judul"
+          aria-label="Cari materi berdasarkan judul"
         />
       </div>
 

@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend: Next.js Sawala Learning Hub
 
-## Getting Started
+## 🎥 Video Demonstrasi
 
-First, run the development server:
+Karena project ini Fullstack (membutuhkan Backend Strapi dan Frontend Next.js yang berjalan bersamaan), silakan tonton video demonstrasi cara menjalankan dan melihat hasil project melalui link berikut:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+👉 **[Tonton Video Demo di sini](https://drive.google.com/file/d/12xhgaZTnkvN6KHdzJaLFqLpOjjH7g8aH/view?usp=sharing)**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deskripsi
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Folder ini berisi aplikasi antarmuka (UI) untuk Final Project yang dibangun menggunakan **Next.js (App Router)** dan **TypeScript**. Desain komponennya menerapkan prinsip **Atomic Design** (Atoms, Molecules, Organisms) dan mengambil data secara langsung dari Strapi CMS.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Fitur & Konsep (Sesuai Silabus Minggu 9-10)
 
-## Learn More
+- **App Router**: Menggunakan struktur `app/` dengan `layout.tsx` dan `page.tsx`.
+- **Data Fetching**: Mengambil data langsung dari REST API Strapi.
+- **Routing Dinamis**: Halaman detail materi menggunakan route `app/articles/[slug]/page.tsx` (atau sejenisnya).
+- **Atomic Design**: Komponen dipecah menjadi `atoms/` (Button), `molecules/` (ArticleCard), dan `organisms/` (ArticleList).
+- **Environment Variables**: Menggunakan `.env.local` untuk menyimpan URL API Strapi.
 
-To learn more about Next.js, take a look at the following resources:
+## ⚠️ Persiapan Penting Sebelum Menjalankan
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Aplikasi ini **TIDAK AKAN MENAMPILKAN DATA (akan kosong/error)** jika Backend Strapi belum berjalan.
+Pastikan kamu sudah menyalakan server Strapi di `http://localhost:1337` terlebih dahulu (lihat README di folder `backend-strapi`).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Cara Menjalankan
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Pastikan server Strapi (backend) sudah menyala di terminal terpisah.
+2. Buka terminal di dalam folder `frontend-nextjs` ini.
+3. Jalankan `npm install` untuk menginstall dependencies.
+4. Salin file `.env.example` menjadi `.env.local` (jika belum ada), lalu pastikan isinya menunjuk ke URL Strapi:
+   ```env
+   NEXT_PUBLIC_STRAPI_URL=http://localhost:1337
+   ```
+5. Jalankan `npm run dev` untuk menjalankan aplikasi.
+6. Buka browser dan akses `http://localhost:3000` untuk melihat hasilnya.

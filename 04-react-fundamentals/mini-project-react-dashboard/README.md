@@ -1,75 +1,33 @@
-# React + TypeScript + Vite
+# Mini Project: React Dashboard (Materi Belajar)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deskripsi
+Project ini adalah hasil praktik (output wajib) untuk Milestone 4: React Fundamentals. Aplikasi ini adalah sebuah dashboard sederhana untuk mengelola daftar materi belajar React. Project dibangun menggunakan **React**, **Vite**, dan **TypeScript**.
 
-Currently, two official plugins are available:
+## Fitur Aplikasi
+1. **Statistik Belajar**: Menampilkan total keseluruhan materi dan total materi yang sudah selesai secara *real-time*.
+2. **Tambah Materi**: Form untuk menambahkan materi baru (judul dan deskripsi).
+3. **Pencarian (Search)**: Fitur untuk mencari materi berdasarkan kata kunci.
+4. **Manajemen Status**: Tombol untuk menandai materi sebagai "Selesai" atau "Batalin".
+5. **Hapus Materi**: Menghapus materi dari daftar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Konsep React yang Diterapkan (Sesuai Silabus)
+- **JSX & Component**: Memisahkan UI menjadi komponen kecil (seperti `Card.tsx`, `Button.tsx`).
+- **Props & State**: Mengirim data materi (props) ke komponen Card, dan mengelola daftar materi (state) di komponen utama.
+- **Event Handling**: Menangani interaksi user pada form input, tombol tambah, hapus, dan ubah status.
+- **Conditional Rendering**: Menampilkan teks "Status: Sudah selesai" (hijau) atau "Belum selesai" (kuning) berdasarkan data.
+- **List Rendering**: Merender daftar materi menggunakan method `.map()`.
+- **useEffect**: Mengelola *side effects* (misalnya menghitung total materi otomatis saat data berubah).
 
-## React Compiler
+## Struktur Folder
+- `src/components/`: Berisi komponen UI yang *reusable* (Card, Button).
+- `src/App.tsx`: Komponen utama tempat logika state dan perakitan UI.
+- `src/main.tsx`: Entry point React.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+## Cara Menjalankan
+1. Buka terminal di dalam folder `mini-project-react-dashboard` ini.
+2. Jalankan `npm install` untuk menginstall dependencies.
+3. Jalankan server development dengan perintah:
+   ```bash
+   npm run dev
 ```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+4. Buka browser dan akses alamat `http://localhost:5173` untuk melihat aplikasi berjalan.
